@@ -1,0 +1,7 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+demopi-lucas-ikawa,com.provaintermediaria.demopi.controller,ClienteController,0,20,0,0,0,6,0,4,0,4
+demopi-lucas-ikawa,com.provaintermediaria.demopi.dto,ClienteDTO,0,12,0,0,0,1,0,1,0,1
+demopi-lucas-ikawa,com.provaintermediaria.demopi.model,Cliente,9,24,0,0,4,11,1,7,1,7
+demopi-lucas-ikawa,com.provaintermediaria.demopi.exception,ResourceNotFoundException,0,4,0,0,0,2,0,1,0,1
+demopi-lucas-ikawa,com.provaintermediaria.demopi,DemopiLucasIkawaApplication,5,3,0,0,2,1,1,1,1,1
+demopi-lucas-ikawa,com.provaintermediaria.demopi.service,ClienteService,0,65,0,0,0,11,0,6,0,6

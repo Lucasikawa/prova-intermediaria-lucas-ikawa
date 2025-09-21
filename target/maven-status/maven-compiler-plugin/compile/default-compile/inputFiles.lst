@@ -1,0 +1,7 @@
+/Users/lucas/Documents/Insper-CCOMP-4ºsemestre-25.2/Projeto-de-Software/prova-intermediaria-lucas-ikawa/src/main/java/com/provaintermediaria/demopi/DemopiLucasIkawaApplication.java
+/Users/lucas/Documents/Insper-CCOMP-4ºsemestre-25.2/Projeto-de-Software/prova-intermediaria-lucas-ikawa/src/main/java/com/provaintermediaria/demopi/controller/ClienteController.java
+/Users/lucas/Documents/Insper-CCOMP-4ºsemestre-25.2/Projeto-de-Software/prova-intermediaria-lucas-ikawa/src/main/java/com/provaintermediaria/demopi/dto/ClienteDTO.java
+/Users/lucas/Documents/Insper-CCOMP-4ºsemestre-25.2/Projeto-de-Software/prova-intermediaria-lucas-ikawa/src/main/java/com/provaintermediaria/demopi/exception/ResourceNotFoundException.java
+/Users/lucas/Documents/Insper-CCOMP-4ºsemestre-25.2/Projeto-de-Software/prova-intermediaria-lucas-ikawa/src/main/java/com/provaintermediaria/demopi/model/Cliente.java
+/Users/lucas/Documents/Insper-CCOMP-4ºsemestre-25.2/Projeto-de-Software/prova-intermediaria-lucas-ikawa/src/main/java/com/provaintermediaria/demopi/repository/ClienteRepository.java
+/Users/lucas/Documents/Insper-CCOMP-4ºsemestre-25.2/Projeto-de-Software/prova-intermediaria-lucas-ikawa/src/main/java/com/provaintermediaria/demopi/service/ClienteService.java
