@@ -31,5 +31,15 @@ public class FilmeController {
     public FilmeDTO adicionar(@RequestBody Filme filme) {
 <span class="fc" id="L32">        return service.adicionar(filme);</span>
     }
+
+    @PutMapping(&quot;/{id}&quot;)
+    public FilmeDTO atualizar(@PathVariable Long id, @RequestBody Filme filme) {
+<span class="fc" id="L37">        return service.atualizar(id, filme);</span>
+    }
+
+    @DeleteMapping(&quot;/{id}&quot;)
+    public void deletar(@PathVariable Long id) {
+<span class="fc" id="L42">        service.deletar(id);</span>
+<span class="fc" id="L43">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

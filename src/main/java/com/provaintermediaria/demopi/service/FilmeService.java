@@ -36,4 +36,25 @@ public class FilmeService {
         return new FilmeDTO(filme.getId(), filme.getTitulo(), filme.getDescricao(),
                 filme.getDuracao(), filme.getDiretor(), filme.getDataCadastro());
     }
+
+    public FilmeDTO atualizar(Long id, Filme novosDados) {
+        Filme filme = repository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Filme não encontrado com id " + id));
+
+        filme.setTitulo(novosDados.getTitulo());
+        filme.setDescricao(novosDados.getDescricao());
+        filme.setDuracao(novosDados.getDuracao());
+        filme.setDiretor(novosDados.getDiretor());
+
+        Filme atualizado = repository.save(filme);
+        return new FilmeDTO(atualizado.getId(), atualizado.getTitulo(), atualizado.getDescricao(),
+                atualizado.getDuracao(), atualizado.getDiretor(), atualizado.getDataCadastro());
+    }
+
+    public void deletar(Long id) {
+        if (!repository.existsById(id)) {
+            throw new ResourceNotFoundException("Filme não encontrado com id " + id);
+        }
+        repository.deleteById(id);
+    }
 }

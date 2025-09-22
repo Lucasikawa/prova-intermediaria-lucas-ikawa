@@ -35,8 +35,8 @@ public class FilmeControllerTest {
     }
 
     @Test
-    public void test_listarShouldReturnOneFilme() throws Exception {
-        FilmeDTO dto = new FilmeDTO(1L, "Matrix", "Ficção", 2, "Wachowski", LocalDate.now());
+    public void test_listar() throws Exception {
+        FilmeDTO dto = new FilmeDTO(1L, "Matrix", "Sci-fi", 2, "Wachowski", LocalDate.now());
 
         Mockito.when(filmeService.listar()).thenReturn(List.of(dto));
 
@@ -46,8 +46,8 @@ public class FilmeControllerTest {
     }
 
     @Test
-    public void test_buscarPorIdShouldReturnFilme() throws Exception {
-        FilmeDTO dto = new FilmeDTO(1L, "Interestelar", "Sci-Fi", 3, "Nolan", LocalDate.now());
+    public void test_buscarPorId() throws Exception {
+        FilmeDTO dto = new FilmeDTO(1L, "Interestelar", "Sci-fi", 3, "Nolan", LocalDate.now());
 
         Mockito.when(filmeService.buscarPorId(1L)).thenReturn(dto);
 
@@ -57,7 +57,7 @@ public class FilmeControllerTest {
     }
 
     @Test
-    public void test_adicionarShouldReturnFilme() throws Exception {
+    public void test_adicionar() throws Exception {
         Filme filme = new Filme("Avatar", "Aventura", 3, "Cameron");
         FilmeDTO dto = new FilmeDTO(1L, "Avatar", "Aventura", 3, "Cameron", LocalDate.now());
 
@@ -69,5 +69,27 @@ public class FilmeControllerTest {
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.id").value(1))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.titulo").value("Avatar"));
+    }
+
+    @Test
+    public void test_atualizar() throws Exception {
+        Filme filme = new Filme("Novo", "Desc nova", 2, "Outro");
+        FilmeDTO dto = new FilmeDTO(1L, "Novo", "Desc nova", 2, "Outro", LocalDate.now());
+
+        Mockito.when(filmeService.atualizar(Mockito.eq(1L), Mockito.any(Filme.class))).thenReturn(dto);
+
+        mockMvc.perform(MockMvcRequestBuilders.put("/filmes/1")
+                        .contentType("application/json")
+                        .content("{\"titulo\":\"Novo\",\"descricao\":\"Desc nova\",\"duracao\":2,\"diretor\":\"Outro\"}"))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.titulo").value("Novo"));
+    }
+
+    @Test
+    public void test_deletar() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.delete("/filmes/1"))
+                .andExpect(MockMvcResultMatchers.status().isOk());
+
+        Mockito.verify(filmeService, Mockito.times(1)).deletar(1L);
     }
 }

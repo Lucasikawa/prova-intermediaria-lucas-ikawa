@@ -36,5 +36,26 @@ public class FilmeService {
 <span class="fc" id="L36">        return new FilmeDTO(filme.getId(), filme.getTitulo(), filme.getDescricao(),</span>
 <span class="fc" id="L37">                filme.getDuracao(), filme.getDiretor(), filme.getDataCadastro());</span>
     }
+
+    public FilmeDTO atualizar(Long id, Filme novosDados) {
+<span class="fc" id="L41">        Filme filme = repository.findById(id)</span>
+<span class="pc" id="L42">                .orElseThrow(() -&gt; new ResourceNotFoundException(&quot;Filme não encontrado com id &quot; + id));</span>
+
+<span class="fc" id="L44">        filme.setTitulo(novosDados.getTitulo());</span>
+<span class="fc" id="L45">        filme.setDescricao(novosDados.getDescricao());</span>
+<span class="fc" id="L46">        filme.setDuracao(novosDados.getDuracao());</span>
+<span class="fc" id="L47">        filme.setDiretor(novosDados.getDiretor());</span>
+
+<span class="fc" id="L49">        Filme atualizado = repository.save(filme);</span>
+<span class="fc" id="L50">        return new FilmeDTO(atualizado.getId(), atualizado.getTitulo(), atualizado.getDescricao(),</span>
+<span class="fc" id="L51">                atualizado.getDuracao(), atualizado.getDiretor(), atualizado.getDataCadastro());</span>
+    }
+
+    public void deletar(Long id) {
+<span class="fc bfc" id="L55" title="All 2 branches covered.">        if (!repository.existsById(id)) {</span>
+<span class="fc" id="L56">            throw new ResourceNotFoundException(&quot;Filme não encontrado com id &quot; + id);</span>
+        }
+<span class="fc" id="L58">        repository.deleteById(id);</span>
+<span class="fc" id="L59">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

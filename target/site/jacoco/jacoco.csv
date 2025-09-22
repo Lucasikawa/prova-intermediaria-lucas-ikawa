@@ -1,7 +1,7 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-demopi-lucas-ikawa,com.provaintermediaria.demopi.controller,FilmeController,0,20,0,0,0,6,0,4,0,4
+demopi-lucas-ikawa,com.provaintermediaria.demopi.controller,FilmeController,0,31,0,0,0,9,0,6,0,6
 demopi-lucas-ikawa,com.provaintermediaria.demopi.dto,FilmeDTO,0,21,0,0,0,1,0,1,0,1
 demopi-lucas-ikawa,com.provaintermediaria.demopi.model,Filme,0,69,0,0,0,21,0,14,0,14
 demopi-lucas-ikawa,com.provaintermediaria.demopi.exception,ResourceNotFoundException,0,4,0,0,0,2,0,1,0,1
 demopi-lucas-ikawa,com.provaintermediaria.demopi,DemopiLucasIkawaApplication,8,0,0,0,3,0,2,0,2,0
-demopi-lucas-ikawa,com.provaintermediaria.demopi.service,FilmeService,0,83,0,0,0,14,0,6,0,6
+demopi-lucas-ikawa,com.provaintermediaria.demopi.service,FilmeService,6,146,0,2,0,27,1,9,1,8
