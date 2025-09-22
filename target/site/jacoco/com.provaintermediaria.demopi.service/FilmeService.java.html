@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FilmeService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">demopi-lucas-ikawa</a> &gt; <a href="index.source.html" class="el_package">com.provaintermediaria.demopi.service</a> &gt; <span class="el_source">FilmeService.java</span></div><h1>FilmeService.java</h1><pre class="source lang-java linenums">package com.provaintermediaria.demopi.service;
+
+import com.provaintermediaria.demopi.dto.FilmeDTO;
+import com.provaintermediaria.demopi.exception.ResourceNotFoundException;
+import com.provaintermediaria.demopi.model.Filme;
+import com.provaintermediaria.demopi.repository.FilmeRepository;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class FilmeService {
+
+    private final FilmeRepository repository;
+
+<span class="fc" id="L16">    public FilmeService(FilmeRepository repository) {</span>
+<span class="fc" id="L17">        this.repository = repository;</span>
+<span class="fc" id="L18">    }</span>
+
+    public List&lt;FilmeDTO&gt; listar() {
+<span class="fc" id="L21">        return repository.findAll().stream()</span>
+<span class="fc" id="L22">                .map(f -&gt; new FilmeDTO(f.getId(), f.getTitulo(), f.getDescricao(),</span>
+<span class="fc" id="L23">                        f.getDuracao(), f.getDiretor(), f.getDataCadastro()))</span>
+<span class="fc" id="L24">                .toList();</span>
+    }
+
+    public FilmeDTO adicionar(Filme filme) {
+<span class="fc" id="L28">        Filme salvo = repository.save(filme);</span>
+<span class="fc" id="L29">        return new FilmeDTO(salvo.getId(), salvo.getTitulo(), salvo.getDescricao(),</span>
+<span class="fc" id="L30">                salvo.getDuracao(), salvo.getDiretor(), salvo.getDataCadastro());</span>
+    }
+
+    public FilmeDTO buscarPorId(Long id) {
+<span class="fc" id="L34">        Filme filme = repository.findById(id)</span>
+<span class="fc" id="L35">                .orElseThrow(() -&gt; new ResourceNotFoundException(&quot;Filme não encontrado com id &quot; + id));</span>
+<span class="fc" id="L36">        return new FilmeDTO(filme.getId(), filme.getTitulo(), filme.getDescricao(),</span>
+<span class="fc" id="L37">                filme.getDuracao(), filme.getDiretor(), filme.getDataCadastro());</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

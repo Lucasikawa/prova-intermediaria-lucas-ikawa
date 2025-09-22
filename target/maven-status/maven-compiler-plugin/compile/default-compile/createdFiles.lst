@@ -1,7 +1,7 @@
-com/provaintermediaria/demopi/repository/ClienteRepository.class
-com/provaintermediaria/demopi/dto/ClienteDTO.class
-com/provaintermediaria/demopi/service/ClienteService.class
-com/provaintermediaria/demopi/controller/ClienteController.class
+com/provaintermediaria/demopi/service/FilmeService.class
+com/provaintermediaria/demopi/controller/FilmeController.class
 com/provaintermediaria/demopi/exception/ResourceNotFoundException.class
+com/provaintermediaria/demopi/dto/FilmeDTO.class
 com/provaintermediaria/demopi/DemopiLucasIkawaApplication.class
-com/provaintermediaria/demopi/model/Cliente.class
+com/provaintermediaria/demopi/repository/FilmeRepository.class
+com/provaintermediaria/demopi/model/Filme.class
